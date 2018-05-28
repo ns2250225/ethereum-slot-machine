@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>区块链水果机</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/jquery.slotmachine.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/slotmachine.min.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    
+</head>
+<body>
+	<div id="randomize">
+	 <div class="content container" style="text-align: center;max-width: 900px;">
+
+	  <h1>区块链水果机</h1>
+
+	  <div class="row" style="margin-left: 150px;">
+	  	   <div class="col-xs-4" style="margin-right: 20px;">
+	   	   <div>
+			   <div id="machine1" class="randomizeMachine">
+				    <div><img src="img/slot1.png" /></div>
+				    <div><img src="img/slot2.png" /></div>
+				    <div><img src="img/slot3.png" /></div>
+				    <div><img src="img/slot4.png" /></div>
+				    <div><img src="img/slot5.png" /></div>
+				    <div><img src="img/slot6.png" /></div>
+				   </div>
+			   </div>
+		  </div>
+
+		  <div class="col-xs-4" style="margin-right: 20px;">
+		   <div>
+			   <div id="machine2" class="randomizeMachine">
+			    <div><img src="img/slot1.png" /></div>
+			    <div><img src="img/slot2.png" /></div>
+			    <div><img src="img/slot3.png" /></div>
+			    <div><img src="img/slot4.png" /></div>
+			    <div><img src="img/slot5.png" /></div>
+			    <div><img src="img/slot6.png" /></div>
+			   </div>
+		   </div>
+		  </div>
+
+		  <div class="col-xs-4" style="margin-right: 20px;">
+		   <div>
+			   <div id="machine3" class="randomizeMachine">
+			    <div><img src="img/slot1.png" /></div>
+			    <div><img src="img/slot2.png" /></div>
+			    <div><img src="img/slot3.png" /></div>
+			    <div><img src="img/slot4.png" /></div>
+			    <div><img src="img/slot5.png" /></div>
+			    <div><img src="img/slot6.png" /></div>
+			   </div>
+		   </div>
+		  </div>
+	  </div>
+
+	  <div>
+	  <div class="btn-group btn-group-justified btn-group-randomize" role="group">
+	   
+	   <span style="margin-top: 10px;"><strong>余额： </strong></span>
+	   <span id="playerBalance" style="margin-top: 10px;"><strong>10</strong></span>
+	    <span style="margin-right: 30px; margin-top: 10px;"><strong>ETH</strong></span>
+
+	   <div id="ranomizeButton" type="button" class="btn btn-danger btn-lg">开始</div>
+	  </div>
+	  </div>
+	 </div>
+	</div>
+    
+    <script >
+    	  if (typeof web3 !== 'undefined') {
+			  web3 = new Web3(web3.currentProvider);
+			} else {
+			  // set the provider you want from Web3.providers
+			  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		   }
+
+
+		   var slotMachineContract = web3.eth.contract([
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getBalanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "admission",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_result",
+          "type": "string"
+        }
+      ],
+      "name": "checkGameResult",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]);
+
+
+		var slotMachine = slotMachineContract.at('0x17e3ba2ddf8085cd25b22df147d70db3a964e61b');
+
+		var playerAddress = web3.eth.accounts[0];
+
+		slotMachine.admission.sendTransaction(playerAddress, {
+                from: playerAddress
+            }, (error, result) => {
+		  		if (!error) {
+		  			console.log(result);
+		  		} else {
+		  			console.log(error);
+		  		}
+				
+		})
+
+
+		  var machine1 = document.getElementById('machine1');
+		  machine1 = new SlotMachine(machine1, { 
+		    active: 0,
+		    delay: 500 
+		  });
+
+		  var machine2 = document.getElementById('machine2');
+		  machine2 = new SlotMachine(machine2, { 
+		    active: 0,
+		    delay: 500 
+		  });
+
+		  var machine3 = document.getElementById('machine3');
+		  machine3 = new SlotMachine(machine3, { 
+		    active: 0,
+		    delay: 500 
+		  });
+		  
+
+		  var arr = [];
+
+		  function onComplete(active) {
+			  if (arr.length <= 1) {
+			   arr.push(active);
+			  }
+			  else if (arr.length > 1) {
+			   arr.push(active);
+			   if (arr[0] == arr[1] && arr[1] == arr[2]) {
+			   alert("恭喜你中奖了！");
+			   slotMachine.checkGameResult.sendTransaction("win", {
+                from: playerAddress
+		            }, (error, result) => {
+				  		if (!error) {
+				  			console.log(result);
+				  		} else {
+				  			console.log(error);
+				  		}
+						
+				})
+
+			   }
+			   else if (arr[0] == arr[1] || arr[0] == arr[2] || arr[1] == arr[2]) {
+			   alert("还差一点，继续加油");
+			   }
+			   else {
+			   alert("手气不行");
+			   slotMachine.checkGameResult.sendTransaction("lose", {
+                from: playerAddress
+		            }, (error, result) => {
+				  		if (!error) {
+				  			console.log(result);
+				  		} else {
+				  			console.log(error);
+				  		}
+						
+				})
+
+			   }
+			   arr = [];
+			  }
+		  }
+
+		  const playBtn = document.getElementById('ranomizeButton');
+		  playBtn.addEventListener('click', Play, false);
+		  
+		  function Play() {
+
+		  	slotMachine.getBalanceOf.call(playerAddress, (error, result) => {
+		  		if (!error) {
+		  			console.log(result.c[0]);
+		  			var balance_text = document.getElementById('playerBalance');
+		  			balance_text.innerText = result.c[0];
+		  		} else {
+		  			console.log(error);
+		  		}
+			})
+
+			  machine1.shuffle(5, onComplete);
+
+			  setTimeout(function () {
+			   machine2.shuffle(5, onComplete);
+			  }, 500);
+
+			  setTimeout(function () {
+			   machine3.shuffle(5, onComplete);
+			  }, 1000);
+
+		  }
+		
+    </script>
+</body>
+</html>

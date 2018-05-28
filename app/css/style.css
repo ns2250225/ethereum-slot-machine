@@ -1,0 +1,338 @@
+ @charset "utf-8";
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/* @import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One); */
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+code {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 0.7) !important;
+  text-align: left;
+}
+
+.well {
+  padding: 25px;
+  background-color: rgba(245, 245, 245, 0.7);
+  border-radius: 5px;
+}
+
+.well p {
+  font-size:
+}
+
+.btn-group-justified {
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+a{
+  color: #ccd500;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+  color: #a9b119;
+}
+
+.slotMachine .slot{
+  height:100px;
+  background-position-x: 55%;
+  background-repeat: no-repeat;
+}
+
+.slot1 {
+  background-image: url("../img/slot1.png");
+}
+
+.slot2 {
+  background-image: url("../img/slot2.png");
+}
+
+.slot3 {
+  background-image: url("../img/slot3.png");
+}
+
+.slot4 {
+  background-image: url("../img/slot4.png");
+}
+
+.slot5 {
+  background-image: url("../img/slot5.png");
+}
+
+.slot6 {
+  background-image: url("../img/slot6.png");
+}
+
+/*
+ * Header
+ */
+.header-line {
+  width: 100%;
+  position: absolute;
+  height: 10px;
+  background-color: #A48E4E;
+  top: 0px;
+}
+
+header {
+  margin-top: 10px;
+  background-color: #DCD293;
+  border-bottom: 10px solid #66D4FF;
+  border-top: 20px dashed #A48E4E;
+  padding: 2em;
+  color:#333;
+  font-size: 25px;
+  text-align: center;
+}
+
+header a {
+  color: #6C5726;
+  font-weight: 700;
+}
+
+/*
+ * Airlines
+ */
+#plane {
+  width: 100%;
+  position: relative;
+  border-bottom: 10px solid #B8312F;
+  border-top: 20px dashed #66D4FF;
+  background-color: rgb(0, 175, 225);
+  background-image: url('../img/plane.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+#plane .content {
+  width: 100%;
+  float: left;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 42px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#plane .content, footer .content{
+  font-family: 'Pathway Gothic One';
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 80px;
+}
+
+.badge {
+  color: white;
+  vertical-align: middle;
+  font-size: 30px;
+  background-color: rgb(0, 175, 225);
+}
+
+#planeMachine {
+  height: 67px;
+  overflow: hidden;
+  display: inline-block;
+  text-align: left;
+}
+
+/*
+ * SlotMachine
+ */
+#randomize {
+  border-bottom: 10px solid rgb(72, 158, 48);
+  background-color: #EB6B56;
+  border-top: 20px dashed #B8312F;
+}
+
+#randomize .row > div.col-sm-4 > div {
+  padding: 40px;
+  width: 180px;
+  height: 180px;
+  background: white;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+#randomize .row > div.col-xs-4 > div {
+  padding-top: 40px;
+  padding-left: 40px;
+  width: 175px;
+  height: 175px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.randomizeMachine {
+  width: 100px;
+  height: 100px;
+}
+
+#randomize .btn-group {
+  margin-top: 30px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.machineResult {
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  height: 50px !important;
+  background: transparent !important;
+  font-size: 18px;
+  padding: 10px !important;
+}
+
+/*
+ * Watch
+ */
+#watch {
+  border-top: 20px dashed rgb(72, 158, 48);
+  border-bottom: 10px solid #195AC8;
+  background-color: #46D265;
+}
+
+#watch h1 {
+  margin: 0px;
+}
+
+#watch .small {
+  text-align: center;
+  background: url('../img/watch.png') no-repeat 50% 50%;
+  height: 300px;
+}
+
+#watch1 {
+  margin-left: calc(50% - 42px);
+  transform: translateY(115px);
+  width: 80px;
+  height: 80px;
+}
+
+#watch1 .slotMachineContainer > div {
+  color: #fff;
+  height: 80px;
+  width: 80px;
+  font-size: 64px;
+}
+
+#watch .btn-group .btn {
+  border: none;
+  background-color: rgb(72, 158, 48);
+}
+
+#watch .btn-group .btn:hover, .btn-group .btn:focus {
+  background-color: rgb(72, 158, 48);
+}
+
+/*
+ * Triky
+ */
+ #triky {
+   background: url(../img/triky.jpg) no-repeat right 130px;
+   background-color: #0F99CA;
+   border-bottom: 10px solid rgb(180, 75, 119);
+   border-top: 20px dashed #195AC8;
+   background-position-x: calc(100% + 40px)
+ }
+
+#triky1 {
+  background-color: #fff;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  padding-top: 4px;
+}
+
+/*
+ * Casino
+ */
+#casino {
+  border-top: 20px dashed rgb(180, 75, 119);
+  border-bottom: 10px solid #A48E4E;
+  background-color: rgb(240, 150, 150);
+}
+
+#casino .content:nth-child(1) {
+  text-align: center;
+  background: url('../img/machine.png') no-repeat 50% 80px;
+  background-position-x: calc(50% + 30px);
+  min-height: 580px;
+}
+
+#casino .content > div {
+  padding-top: 165px;
+  width: 300px;
+  margin: 0 auto;
+  transform: translateX(30px);
+}
+
+.machineContainer{
+  padding: 5px 1px 5px 1px;
+  height: 135px;
+}
+
+.slotMachine{
+  width: 36.333333%;
+  border: 5px solid #CF5178;
+  height: 100px;
+  display: inline-block;
+}
+
+#casino .btn-group {
+  margin-top: 150px;
+  transform: translateX(-25px);
+}
+
+#casino .btn-group .btn {
+  border: none;
+  background-color: rgb(209, 79, 119);
+}
+
+#casino .btn-group .btn:hover, .btn-group .btn:focus {
+  background-color: rgb(180, 75, 119);
+}
+
+/*
+ * Footer
+ */
+footer{
+  width:100%;
+  background-color: #6C5726;
+  border-top: 20px dashed #A48E4E;
+  height: 180px;
+  padding-top: 40px;
+  text-align: center;
+  color: #DCD293;
+}
+
+#textMachine {
+  width:520px;
+  height: 67px;
+  overflow: hidden;
+  display: inline-block;
+  text-align: left;
+}
+
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
