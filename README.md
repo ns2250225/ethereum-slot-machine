@@ -18,6 +18,6 @@
 - npm install -g ganache-cli
 
 # 项目的运行
-- （1）迁移合约：truffle migrate
-- （2）启动ganache-cli：ganache-cli
+- （1）启动ganache-cli：ganache-cli
+- （2）迁移合约：truffle migrate
 - （3）修改app/index.html中的abi，和合约地址
