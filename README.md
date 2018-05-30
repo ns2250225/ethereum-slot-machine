@@ -1,10 +1,5 @@
 # ethereum-slot-machine
-基于以太坊的水果机游戏
-
-# 规则
-- 初始化账号有10个ETH
-- 每次游戏输了会减1个ETH，赢了则加2个ETH
-- 注：有两个相同则不扣不增
+基于以太坊的水果机游戏V2.0
 
 # 效果
 ![](./demo.gif)
@@ -20,5 +15,4 @@
 # 项目的运行
 - （1）启动ganache-cli：ganache-cli
 - （2）迁移合约：truffle migrate
-- （3）修改app/index.html中的abi，和合约地址
-- （4）在浏览器中打开app/index.html
+- （3）npm install && npm run dev

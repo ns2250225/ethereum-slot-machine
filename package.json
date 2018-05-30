@@ -1,0 +1,24 @@
+{
+  "name": "ethereum-slot-machine",
+  "version": "1.0.0",
+  "description": "基于以太坊的水果机游戏",
+  "main": "truffle-config.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ns2250225/ethereum-slot-machine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ns2250225/ethereum-slot-machine/issues"
+  },
+  "homepage": "https://github.com/ns2250225/ethereum-slot-machine#readme",
+  "dependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
